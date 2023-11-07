@@ -18,8 +18,8 @@
                         <td><?= $user->id ?></td>
                         <td><?= $user->name ?></td>
                         <td><?= $user->email ?></td>
-                        <td><a href="<?= ROOT ?>adminuser/update/<?= $user->id ?>" class="btn btn-info">Modificar</a></td>
-                        <td><a href="<?= ROOT ?>adminuser/delete/<?= $user->id ?>" class="btn btn-danger">Borrar</a></td>
+                        <td><a href="<?= ROOT ?>adminUser/update/<?= $user->id ?>" class="btn btn-info">Modificar</a></td>
+                        <td><a href="<?= ROOT ?>adminUser/delete/<?= $user->id ?>" class="btn btn-danger">Borrar</a></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
@@ -28,7 +28,7 @@
     <div class="card-footer">
         <div class="row">
             <div class="col-sm-6">
-                <a href="<?= ROOT ?>adminuser/create" class="btn btn-success">
+                <a href="<?= ROOT ?>adminUser/create" class="btn btn-success">
                     Crear usuario
                 </a>
             </div>

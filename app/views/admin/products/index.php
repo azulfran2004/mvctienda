@@ -20,8 +20,8 @@
                     <td><?= $data['type'][$product->type - 1]->description ?></td>
                     <td><?= $product->name ?></td>
                     <td><?= html_entity_decode($product->description) ?></td>
-                    <td><a href="<?= ROOT ?>adminproduct/update/<?= $product->id ?>" class="btn btn-info">Modificar</a></td>
-                    <td><a href="<?= ROOT ?>adminproduct/delete/<?= $product->id ?>" class="btn btn-danger">Borrar</a></td>
+                    <td><a href="<?= ROOT ?>adminProduct/update/<?= $product->id ?>" class="btn btn-info">Modificar</a></td>
+                    <td><a href="<?= ROOT ?>adminProduct/delete/<?= $product->id ?>" class="btn btn-danger">Borrar</a></td>
                 </tr>
             <?php endforeach ?>
             </tbody>
@@ -30,7 +30,7 @@
     <div class="card-footer">
         <div class="row">
             <div class="col-sm-6">
-                <a href="<?= ROOT ?>adminproduct/create" class="btn btn-success">
+                <a href="<?= ROOT ?>adminProduct/create" class="btn btn-success">
                     Crear producto
                 </a>
             </div>

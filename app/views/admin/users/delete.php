@@ -4,7 +4,7 @@
         <h1 class="text-center">Vista de usuarios - Eliminación</h1>
     </div>
     <div class="card-body">
-        <form action="<?= ROOT ?>adminuser/delete/<?= $data['data']->id ?>" method="POST">
+        <form action="<?= ROOT ?>adminUser/delete/<?= $data['data']->id ?>" method="POST">
             <div class="form-group text-left mb-2">
                 <label for="name">Usuario:</label>
                 <input type="text" name="name" id="name"
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group text-left mt-4">
                 <input type="submit" value="Eliminar" class="btn btn-success">
-                <a href="<?= ROOT ?>adminuser" class="btn btn-info">Regresar</a>
+                <a href="<?= ROOT ?>adminUser" class="btn btn-info">Regresar</a>
                 <p class="mt-2">Una vez eliminado, los datos no serán recuperables</p>
             </div>
         </form>

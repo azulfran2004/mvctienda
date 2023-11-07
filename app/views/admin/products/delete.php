@@ -28,7 +28,7 @@
             </div>
             <div class="form-group text-left">
                 <input type="submit" value="Eliminar producto" class="btn btn-success">
-                <a href="<?= ROOT ?>adminproduct" class="btn btn-info">Regresar</a>
+                <a href="<?= ROOT ?>adminProduct" class="btn btn-info">Regresar</a>
             </div>
         </form>
     </div>

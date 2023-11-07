@@ -8,9 +8,9 @@ class MySQLdb
 {
     //Datos de la conexión
     private $host = 'mysql';
-    private $user = 'default';
-    private $pass = 'secret';
-    private $dbname = 'mvctienda';
+    private $user = 'root';
+    private $pass = '';
+    private $dbname = 'examen';
 
     //Atributos
     private static $instancia = null;

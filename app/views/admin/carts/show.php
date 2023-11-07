@@ -39,7 +39,7 @@
             </table>
         </div>
         <div class="card-footer">
-            <a href="<?= ROOT ?>admincarts/sales" class="btn btn-success">Regresar</a>
+            <a href="<?= ROOT ?>adminCarts/sales" class="btn btn-success">Regresar</a>
         </div>
     </div>
 <?php include_once (VIEWS . 'footer.php') ?>

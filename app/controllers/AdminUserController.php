@@ -70,7 +70,7 @@ class AdminUserController extends Controller
 
                 if ($this->model->createAdminUser($dataForm)) {
 
-                    header('location:' . ROOT . 'adminuser');
+                    header('location:' . ROOT . 'adminUser');
 
                 } else {
 
@@ -80,7 +80,7 @@ class AdminUserController extends Controller
                         'subtitle' => 'Error al crear un nuevo usuario administrador',
                         'text' => 'Sucedió un error durante la creación de un nuevo administrador',
                         'color' => 'alert-danger',
-                        'url' => 'adminuser',
+                        'url' => 'adminUser',
                         'colorButton' => 'btn-danger',
                         'textButton' => 'Volver',
                     ];
@@ -154,7 +154,7 @@ class AdminUserController extends Controller
                 $errors = $this->model->setUser($data);
 
                 if (empty($errors)) {
-                    header('location:' . ROOT . 'adminuser');
+                    header('location:' . ROOT . 'adminUser');
                 }
             }
         }
@@ -183,7 +183,7 @@ class AdminUserController extends Controller
             $errors = $this->model->delete($id);
 
             if (empty($errors)) {
-                header('location:' . ROOT . 'adminuser');
+                header('location:' . ROOT . 'adminUser');
             }
         }
 
