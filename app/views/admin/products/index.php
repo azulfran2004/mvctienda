@@ -19,7 +19,17 @@
                     <td><?= $product->id ?></td>
                     <td><?= $data['type'][$product->type - 1]->description ?></td>
                     <td><?= $product->name ?></td>
-                    <td><?= html_entity_decode($product->description) ?></td>
+                    <td>
+                    <?php
+                     $description = html_entity_decode($product->description);
+                    if (strlen($description) > 30) {
+                    echo substr($description, 0, 200) . '...';
+                    } else {
+                    echo $description;
+                    }
+                    ?>
+                    </td>
+                    
                     <td><a href="<?= ROOT ?>adminProduct/update/<?= $product->id ?>" class="btn btn-info">Modificar</a></td>
                     <td><a href="<?= ROOT ?>adminProduct/delete/<?= $product->id ?>" class="btn btn-danger">Borrar</a></td>
                 </tr>
