@@ -25,6 +25,8 @@ class CartController extends Controller
                 'user_id' => $user_id,
                 'data' => $cart,
                 'errors' => $errors,
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('carts/index', $data);
@@ -88,6 +90,8 @@ class CartController extends Controller
                 'subtitle' => 'Carrito | Verificar dirección de envío',
                 'menu' => true,
                 'data' => $user,
+                'user_id' => $session->getUserId(),
+
             ];
             $this->view('carts/address', $data);
 
@@ -96,6 +100,8 @@ class CartController extends Controller
                 'title' => 'Carrito | Checkout',
                 'subtitle' => 'Carrito | Iniciar sesión',
                 'menu' => true,
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('carts/checkout', $data);
@@ -104,10 +110,14 @@ class CartController extends Controller
 
     public function paymentmode()
     {
+        $session = new Session();
+
         $data = [
             'title' => 'Carrito | Forma de pago',
             'subtitle' => 'Carrito | Forma de pago',
             'menu' => true,
+            'user_id' => $session->getUserId(),
+
         ];
         $this->view('carts/paymentmode', $data);
     }
@@ -125,6 +135,8 @@ class CartController extends Controller
             'user' => $user,
             'data' => $cart,
             'menu' => true,
+            'user_id' => $session->getUserId(),
+
         ];
         $this->view('carts/verify', $data);
     }
@@ -140,6 +152,8 @@ class CartController extends Controller
                 'title' => 'Carrito | Gracias por su compra',
                 'data' => $user,
                 'menu' => true,
+                'user_id' => $session->getUserId(),
+
             ];
             $this->view('carts/thanks', $data);
         } else {
@@ -152,6 +166,8 @@ class CartController extends Controller
                 'url' => 'login',
                 'colorButton' => 'btn-danger',
                 'textButton' => 'Regresar',
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('mensaje', $data);

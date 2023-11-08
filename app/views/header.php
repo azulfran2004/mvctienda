@@ -52,6 +52,17 @@
                 <li class="nav-item">
                     <a href="<?= ROOT . 'shop/logout' ?>" class="nav-link">Salir</a>
                 </li>
+                <li class="nav-item">
+
+                    
+
+                    <?php if (null ==($data['user_id'])): ?>
+
+                    <a href="<?= ROOT . 'login' ?>" class="nav-link">Login</a>
+
+                        <?php endif; ?>
+
+                    </li>
             </ul>
         <?php endif; ?>
         <?php if (isset($data['admin']) && $data['admin']): ?>

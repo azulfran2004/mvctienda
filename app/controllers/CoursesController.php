@@ -22,6 +22,8 @@ class CoursesController extends Controller
                 'menu' => true,
                 'active' => 'courses',
                 'data' => $courses,
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('courses/index', $data);

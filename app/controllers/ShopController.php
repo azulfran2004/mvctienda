@@ -13,24 +13,23 @@ class ShopController extends Controller
     {
         $session = new Session();
 
-        if ($session->getLogin()) {
+        
+        $mostSold = $this->model->getMostSold();
+        $news = $this->model->getNews();
 
-            $mostSold = $this->model->getMostSold();
-            $news = $this->model->getNews();
-
-            $data = [
-                'title' => 'Bienvenid@ a nuestra exclusiva tienda de productos',
-                'menu' => true,
-                'subtitle' => 'Artículos más vendidos',
-                'subtitle2' => 'Artículos nuevos',
-                'data' => $mostSold,
-                'news' => $news,
-            ];
-
-            $this->view('shop/index', $data);
-        } else {
-            header('location:' . ROOT);
-        }
+        $data = [
+        'title' => 'Bienvenid@ a nuestra exclusiva tienda de productos',
+        'menu' => true,
+        'subtitle' => 'Artículos más vendidos',
+        'subtitle2' => 'Artículos nuevos',
+        'data' => $mostSold,
+            'news' => $news,
+            'user_id' => $session->getUserId(),
+  
+        ];
+        $this->view('shop/index', $data);            
+            
+          
     }
 
     public function logout()
@@ -70,6 +69,8 @@ class ShopController extends Controller
                 'title' => 'Quienes somos',
                 'menu' => true,
                 'active' => 'whoami',
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('shop/whoami', $data);
@@ -113,6 +114,8 @@ class ShopController extends Controller
                         'url' => 'shop',
                         'colorButton' => 'btn-success',
                         'textButton' => 'Regresar',
+                        'user_id' => $session->getUserId(),
+
                     ];
                     $this->view('mensaje', $data);
                 } else {
@@ -126,6 +129,8 @@ class ShopController extends Controller
                         'url' => 'shop',
                         'colorButton' => 'btn-danger',
                         'textButton' => 'Regresar',
+                        'user_id' => $session->getUserId(),
+
                     ];
                     $this->view('mensaje', $data);
                 }
@@ -135,6 +140,8 @@ class ShopController extends Controller
                     'menu' => true,
                     'errors' => $errors,
                     'active' => 'contact',
+                    'user_id' => $session->getUserId(),
+
                 ];
 
                 $this->view('shop/contact', $data);
@@ -148,6 +155,8 @@ class ShopController extends Controller
                     'title' => 'Contacta con nosotros',
                     'menu' => true,
                     'active' => 'contact',
+                    'user_id' => $session->getUserId(),
+
                 ];
 
                 $this->view('shop/contact', $data);

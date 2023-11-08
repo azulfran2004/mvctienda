@@ -22,6 +22,8 @@ class BooksController extends Controller
                 'menu' => true,
                 'active' => 'books',
                 'data' => $books,
+                'user_id' => $session->getUserId(),
+
             ];
 
             $this->view('books/index', $data);
