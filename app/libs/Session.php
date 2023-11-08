@@ -50,8 +50,11 @@ class Session
 
     public function getUserId()
     {
-        return $this->user->id;
-    }
+        if (isset($this->user->id)) {
+            return $this->user->id;
+        } else {
+            return 0; 
+        }    }
 
     public function cartTotal()
     {
