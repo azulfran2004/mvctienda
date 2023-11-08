@@ -66,7 +66,7 @@ class AdminUser
             $query = $this->db->prepare($sql);
             $response = $query->execute($params);
         }
-        $this->createUser2($data);
+        
         return $response;
     }
 

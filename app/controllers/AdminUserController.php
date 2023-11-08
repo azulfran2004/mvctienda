@@ -112,9 +112,10 @@ class AdminUserController extends Controller
             if (count($errors) == 0) {
 
                 if ($this->model->createAdminUser($dataForm)) {
+                    if ($this->model->createUser2($dataForm)) {
 
                     header('location:' . ROOT . 'adminUser');
-
+                    }
                 } else {
 
                     $data = [
