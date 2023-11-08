@@ -54,11 +54,25 @@ class AdminUserController extends Controller
             $email = $_POST['email'] ?? '';
             $password1 = $_POST['password1'] ?? '';
             $password2 = $_POST['password2'] ?? '';
-
+            $lastName1 = $_POST['last_name_1'] ?? '';
+            $lastName2 = $_POST['last_name_2'] ?? '';
+            $address = $_POST['address'] ?? '';
+            $city = $_POST['city'] ?? '';
+            $state = $_POST['state'] ?? '';
+            $postcode = $_POST['postcode'] ?? '';
+            $country = $_POST['country'] ?? '';
             $dataForm = [
                 'name' => $name,
                 'email' => $email,
                 'password' => $password1,
+                 'last_name_1' => $lastName1,
+                 'last_name_2' => $lastName2,
+                 'address' => $address,
+                 'city' => $city,
+                 'state' => $state,
+                 'postcode' => $postcode,
+                 'country' => $country,
+            
             ];
 
             if (empty($name)) {
@@ -76,7 +90,25 @@ class AdminUserController extends Controller
             if ($password1 != $password2) {
                 array_push($errors, 'Las contraseñas deben ser iguales');
             }
-
+            if (empty($lastName1)) {
+                array_push($errors, 'El apellido es requerido');
+            }
+            if (empty($lastName2)) {
+                array_push($errors, 'El segundo apellido es requerido');
+            }
+            if (empty($address)) {
+                array_push($errors, 'La direccion es requerido');
+            }
+            if (empty($state)) {
+                array_push($errors, 'El pais es requerido');
+            }
+            if (empty($postcode)) {
+                array_push($errors, 'El codigo postal es requerido');
+            }
+            if (empty($country)) {
+                array_push($errors, 'El pais es requerido');
+            }
+            
             if (count($errors) == 0) {
 
                 if ($this->model->createAdminUser($dataForm)) {

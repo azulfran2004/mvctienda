@@ -38,6 +38,59 @@
                        class="form-control" required
                        placeholder="Repite la contraseña">
             </div>
+            <div class="form-group text-left mb-2">
+                <label for="last_name_1">Primer apellido:</label>
+                <input type="text" name="last_name_1" id="last_name_1"
+                       class="form-control" required
+                       placeholder="Escribe tu primer apellido"
+                       value="<?= $data['data']['last_name_1'] ?? '' ?>">
+            </div>
+            <div class="form-group text-left mb-2">
+                <label for="last_name_2">Segundo apellido:</label>
+                <input type="text" name="last_name_2" id="last_name_2"
+                       class="form-control"
+                       placeholder="Escribe tu segundo apellido"
+                       value="<?= $data['data']['last_name_2'] ?? '' ?>">
+            </div>
+           
+            <div class="form-group text-left mb-2">
+                <label for="address">Dirección:</label>
+                <input type="text" name="address" id="address"
+                       class="form-control" required
+                       placeholder="Escribe tu dirección"
+                       value="<?= $data['data']['address'] ?? '' ?>">
+            </div>
+            <div class="form-group text-left mb-2">
+                <label for="city">Ciudad:</label>
+                <input type="text" name="city" id="city"
+                       class="form-control" required
+                       placeholder="Escribe tu ciudad"
+                       value="<?= $data['data']['city'] ?? '' ?>">
+            </div>
+            <div class="form-group text-left mb-2">
+                <label for="state">Provincia:</label>
+                <input type="text" name="state" id="state"
+                       class="form-control" required
+                       placeholder="Escribe tu provincia"
+                       value="<?= $data['data']['state'] ?? '' ?>">
+            </div>
+            <div class="form-group text-left mb-2">
+                <label for="postcode">Código Postal:</label>
+                <input type="text" name="postcode" id="postcode"
+                       class="form-control" required
+                       placeholder="Escribe tu código postal"
+                       value="<?= $data['dataForm']['postcode'] ?? '' ?>">
+            </div>
+            <div class="form-group text-left mb-2">
+                <label for="country">País:</label>
+                <input type="text" name="country" id="country"
+                       class="form-control" required
+                       placeholder="Escribe tu país"
+                       value="<?= $data['data']['country'] ?? '' ?>">
+            </div>
+           
+           
+           
             <div class="form-group text-left">
                 <input type="submit" value="Enviar datos" class="btn btn-success">
                 <a href="<?= ROOT ?>adminUser" class="btn btn-info">Regresar</a>
